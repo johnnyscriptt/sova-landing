@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy for Sova - Your personal affirmation companion.">
+    <meta name="theme-color" content="#050508">
+    <title>Privacy Policy - Sova</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Enhanced color hierarchy matching index.html */
+            --bg: #050508;
+            --bg-elevated: rgba(255, 255, 255, 0.02);
+            --text-primary: rgba(255, 255, 255, 0.85);
+            --text-secondary: rgba(255, 255, 255, 0.5);
+            --text-tertiary: rgba(255, 255, 255, 0.35);
+            --text-accent: #FFFFFF;
+            --accent-purple: #A78BFA;
+            --accent-purple-glow: rgba(139, 92, 246, 0.15);
+            --border: rgba(255, 255, 255, 0.06);
+            --highlight: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Atmospheric Background with Ambient Orbs */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            background-image:
+                /* Purple ambient orb - top */
+                radial-gradient(
+                    ellipse 60% 40% at 30% 10%,
+                    rgba(139, 92, 246, 0.1) 0%,
+                    transparent 50%
+                ),
+                /* Blue ambient orb - right side */
+                radial-gradient(
+                    ellipse 50% 60% at 90% 50%,
+                    rgba(59, 130, 246, 0.06) 0%,
+                    transparent 50%
+                ),
+                /* Pink accent orb - bottom */
+                radial-gradient(
+                    ellipse 40% 30% at 50% 95%,
+                    rgba(236, 72, 153, 0.05) 0%,
+                    transparent 40%
+                );
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Subtle Grain/Noise Texture Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(5,5,8,0.95) 0%, transparent 100%);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-accent);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+        }
+
+        .logo-icon {
+            font-size: 1.75rem;
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .back-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-purple);
+            transition: width 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--text-accent);
+        }
+
+        .back-link:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 10rem 2rem 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            background: linear-gradient(
+                135deg,
+                #FFFFFF 0%,
+                rgba(255, 255, 255, 0.85) 40%,
+                var(--accent-purple) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(167, 139, 250, 0.2));
+        }
+
+        .page-header .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        section h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-accent);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.3px;
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.15);
+        }
+
+        section h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-purple);
+            margin: 2rem 0 0.75rem;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        section ul, section ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        section li {
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        section strong {
+            color: var(--text-accent);
+            font-weight: 500;
+        }
+
+        /* Glassmorphism Highlight Box */
+        .highlight-box {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 2px solid var(--accent-purple);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 16px 16px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 0 16px 16px 0;
+            background: linear-gradient(
+                135deg,
+                rgba(139, 92, 246, 0.08) 0%,
+                transparent 50%
+            );
+            pointer-events: none;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        /* Glassmorphism Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table th {
+            font-weight: 500;
+            color: var(--text-accent);
+            background: rgba(139, 92, 246, 0.08);
+        }
+
+        .data-table td {
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        .data-table tr:hover td {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .badge-yes {
+            background: rgba(46, 125, 50, 0.2);
+            color: #66BB6A;
+            box-shadow: 0 0 10px rgba(46, 125, 50, 0.2);
+        }
+
+        .badge-no {
+            background: rgba(198, 40, 40, 0.2);
+            color: #EF5350;
+            box-shadow: 0 0 10px rgba(198, 40, 40, 0.2);
+        }
+
+        /* Glassmorphism Contact Box */
+        .contact-box {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 4rem;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .contact-box::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 50%,
+                rgba(139, 92, 246, 0.1) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            pointer-events: none;
+        }
+
+        .contact-box:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 60px rgba(139, 92, 246, 0.05);
+        }
+
+        .contact-box h2 {
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-box a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            border-color: var(--accent-purple);
+            text-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+        }
+
+        /* Glassmorphism Table of Contents */
+        .toc {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .toc::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.08) 0%,
+                transparent 60%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            pointer-events: none;
+        }
+
+        .toc h2 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .toc ol {
+            padding-left: 1.25rem;
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--accent-purple);
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            background: linear-gradient(180deg, transparent 0%, rgba(5, 5, 8, 0.8) 100%);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-purple);
+            text-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            nav {
+                padding: 1.5rem 1.5rem;
+            }
+
+            main {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .toc ol {
+                columns: 1;
+            }
+
+            .data-table {
+                font-size: 0.8rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Scroll animation */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSection 0.6s ease-out forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.15s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.25s; }
+        section:nth-child(5) { animation-delay: 0.3s; }
+        section:nth-child(6) { animation-delay: 0.35s; }
+        section:nth-child(7) { animation-delay: 0.4s; }
+        section:nth-child(8) { animation-delay: 0.45s; }
+        section:nth-child(9) { animation-delay: 0.5s; }
+        section:nth-child(10) { animation-delay: 0.55s; }
+        section:nth-child(11) { animation-delay: 0.6s; }
+
+        @keyframes fadeInSection {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .toc {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSection 0.6s ease-out forwards;
+            animation-delay: 0.05s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🦉</span>
+            Sova
+        </a>
+        <a href="index.html" class="back-link">← Back</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <header class="page-header">
+            <h1>Privacy Policy</h1>
+            <p class="last-updated">Last Updated: December 28, 2025</p>
+        </header>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Contents</h2>
+            <ol>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#information-we-collect">Information We Collect</a></li>
+                <li><a href="#how-we-use">How We Use Your Information</a></li>
+                <li><a href="#data-sharing">Data Sharing</a></li>
+                <li><a href="#healthkit">Apple HealthKit</a></li>
+                <li><a href="#audio-recordings">Audio Recordings</a></li>
+                <li><a href="#data-storage">Data Storage & Security</a></li>
+                <li><a href="#your-rights">Your Rights</a></li>
+                <li><a href="#children">Children's Privacy</a></li>
+                <li><a href="#changes">Policy Changes</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ol>
+        </div>
+
+        <!-- Introduction -->
+        <section id="introduction">
+            <h2>1. Introduction</h2>
+            <p>Welcome to Sova. We are committed to protecting your privacy and ensuring you understand how we collect, use, and safeguard your personal information when you use the Sova mobile application.</p>
+            <p>This Privacy Policy applies to all users of the Sova app available on the Apple App Store. By using our app, you agree to the collection and use of information in accordance with this policy.</p>
+
+            <div class="highlight-box">
+                <p><strong>Our Commitment:</strong> Your personal data belongs to you. We collect only what's necessary, we never sell your data, and we give you full control over your information.</p>
+            </div>
+        </section>
+
+        <!-- Information We Collect -->
+        <section id="information-we-collect">
+            <h2>2. Information We Collect</h2>
+
+            <h3>Account Information</h3>
+            <p>When you create an account, we collect:</p>
+            <ul>
+                <li><strong>Email address</strong> — Used for account authentication and communication</li>
+                <li><strong>Username</strong> — Your display name within the app (optional)</li>
+                <li><strong>Apple ID information</strong> — If you sign in with Apple</li>
+            </ul>
+
+            <h3>Usage Data</h3>
+            <p>We automatically collect information about how you interact with the app:</p>
+            <ul>
+                <li>Affirmations played and listening duration</li>
+                <li>Mixes created and playback preferences</li>
+                <li>Feature usage patterns</li>
+                <li>Session frequency and duration</li>
+            </ul>
+
+            <h3>What We Don't Collect</h3>
+            <table class="data-table">
+                <tr>
+                    <th>Data Type</th>
+                    <th>Collected?</th>
+                </tr>
+                <tr>
+                    <td>Location data</td>
+                    <td><span class="badge badge-no">No</span></td>
+                </tr>
+                <tr>
+                    <td>Contacts</td>
+                    <td><span class="badge badge-no">No</span></td>
+                </tr>
+                <tr>
+                    <td>Photos</td>
+                    <td><span class="badge badge-no">No</span></td>
+                </tr>
+                <tr>
+                    <td>Financial information</td>
+                    <td><span class="badge badge-no">No</span></td>
+                </tr>
+                <tr>
+                    <td>Biometric data</td>
+                    <td><span class="badge badge-no">No</span></td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- How We Use Your Information -->
+        <section id="how-we-use">
+            <h2>3. How We Use Your Information</h2>
+            <table class="data-table">
+                <tr>
+                    <th>Purpose</th>
+                    <th>Data Used</th>
+                </tr>
+                <tr>
+                    <td>Provide core app functionality</td>
+                    <td>Account info, usage data</td>
+                </tr>
+                <tr>
+                    <td>Sync data across devices</td>
+                    <td>Account info, mixes, favorites</td>
+                </tr>
+                <tr>
+                    <td>Track mindful minutes</td>
+                    <td>Session duration</td>
+                </tr>
+                <tr>
+                    <td>Improve app experience</td>
+                    <td>Anonymized analytics</td>
+                </tr>
+                <tr>
+                    <td>Customer support</td>
+                    <td>Account info, usage data</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Data Sharing -->
+        <section id="data-sharing">
+            <h2>4. Data Sharing</h2>
+
+            <div class="highlight-box">
+                <p><strong>We do not sell your personal data.</strong> We will never sell, rent, or trade your personal information to third parties for marketing purposes.</p>
+            </div>
+
+            <h3>Service Providers</h3>
+            <p>We share data with trusted service providers:</p>
+            <ul>
+                <li><strong>Supabase</strong> — Backend infrastructure and authentication</li>
+                <li><strong>Apple</strong> — HealthKit, Sign in with Apple, App Store services</li>
+                <li><strong>RevenueCat</strong> — Subscription management</li>
+            </ul>
+        </section>
+
+        <!-- HealthKit -->
+        <section id="healthkit">
+            <h2>5. Apple HealthKit</h2>
+
+            <div class="highlight-box">
+                <p>HealthKit data is handled with the highest level of privacy protection in compliance with Apple's guidelines.</p>
+            </div>
+
+            <p>Sova requests permission to <strong>write Mindful Minutes</strong> to your Apple Health app to record your affirmation listening sessions as mindfulness activities.</p>
+
+            <h3>HealthKit Data Protections</h3>
+            <ul>
+                <li>HealthKit data is <strong>never</strong> used for advertising</li>
+                <li>HealthKit data is <strong>never</strong> sold to third parties</li>
+                <li>HealthKit data is <strong>never</strong> shared for marketing</li>
+                <li>You can revoke access at any time in Settings</li>
+            </ul>
+        </section>
+
+        <!-- Audio Recordings -->
+        <section id="audio-recordings">
+            <h2>6. Audio Recordings</h2>
+            <p>When you record custom affirmations:</p>
+            <ul>
+                <li>Audio files are stored <strong>locally on your device</strong> by default</li>
+                <li>We only access the microphone when you choose to record</li>
+                <li>We do not record audio in the background</li>
+                <li>You can delete any recording at any time</li>
+            </ul>
+        </section>
+
+        <!-- Data Storage -->
+        <section id="data-storage">
+            <h2>7. Data Storage & Security</h2>
+
+            <h3>Where We Store Data</h3>
+            <ul>
+                <li><strong>Local device</strong> — App preferences, cached content, audio recordings</li>
+                <li><strong>Supabase cloud</strong> — Account info, mixes, favorites, sync data</li>
+                <li><strong>Apple HealthKit</strong> — Mindful minutes (stored by Apple)</li>
+            </ul>
+
+            <h3>Security Measures</h3>
+            <ul>
+                <li>All data encrypted using TLS 1.3 in transit</li>
+                <li>Passwords hashed using secure algorithms</li>
+                <li>Database access restricted and monitored</li>
+                <li>Regular security audits</li>
+            </ul>
+        </section>
+
+        <!-- Your Rights -->
+        <section id="your-rights">
+            <h2>8. Your Rights</h2>
+            <table class="data-table">
+                <tr>
+                    <th>Right</th>
+                    <th>How to Exercise</th>
+                </tr>
+                <tr>
+                    <td><strong>Access</strong> — Request a copy of your data</td>
+                    <td>Email us</td>
+                </tr>
+                <tr>
+                    <td><strong>Correction</strong> — Update inaccurate info</td>
+                    <td>Edit in app</td>
+                </tr>
+                <tr>
+                    <td><strong>Deletion</strong> — Delete your account</td>
+                    <td>Settings → Delete Account</td>
+                </tr>
+                <tr>
+                    <td><strong>Portability</strong> — Export your data</td>
+                    <td>Email us</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Children's Privacy -->
+        <section id="children">
+            <h2>9. Children's Privacy</h2>
+            <p>Sova is not intended for children under 13. We do not knowingly collect personal information from children. If you believe your child has provided us with personal information, please contact us immediately.</p>
+        </section>
+
+        <!-- Changes -->
+        <section id="changes">
+            <h2>10. Policy Changes</h2>
+            <p>We may update this Privacy Policy from time to time. When we make significant changes, we will notify you via email or in-app notification. Continued use of the app constitutes acceptance of the updated policy.</p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="contact-box">
+            <h2>11. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy or our data practices:</p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:privacy@sova.app">privacy@sova.app</a><br>
+                <strong>Support:</strong> <a href="mailto:support@sova.app">support@sova.app</a>
+            </p>
+            <p>We aim to respond within 48 hours.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="mailto:support@sova.app">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2025 Sova. All rights reserved.</p>
+    </footer>
+</body>
+</html>
