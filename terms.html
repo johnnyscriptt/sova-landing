@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms of Service for Sova - Your personal affirmation companion.">
+    <meta name="theme-color" content="#050508">
+    <title>Terms of Service - Sova</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Enhanced color hierarchy matching index.html */
+            --bg: #050508;
+            --bg-elevated: rgba(255, 255, 255, 0.02);
+            --text-primary: rgba(255, 255, 255, 0.85);
+            --text-secondary: rgba(255, 255, 255, 0.5);
+            --text-tertiary: rgba(255, 255, 255, 0.35);
+            --text-accent: #FFFFFF;
+            --accent-purple: #A78BFA;
+            --accent-purple-glow: rgba(139, 92, 246, 0.15);
+            --border: rgba(255, 255, 255, 0.06);
+            --highlight: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Atmospheric Background with Ambient Orbs */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            background-image:
+                /* Purple ambient orb - top */
+                radial-gradient(
+                    ellipse 60% 40% at 30% 10%,
+                    rgba(139, 92, 246, 0.1) 0%,
+                    transparent 50%
+                ),
+                /* Blue ambient orb - right side */
+                radial-gradient(
+                    ellipse 50% 60% at 90% 50%,
+                    rgba(59, 130, 246, 0.06) 0%,
+                    transparent 50%
+                ),
+                /* Pink accent orb - bottom */
+                radial-gradient(
+                    ellipse 40% 30% at 50% 95%,
+                    rgba(236, 72, 153, 0.05) 0%,
+                    transparent 40%
+                );
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Subtle Grain/Noise Texture Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(5,5,8,0.95) 0%, transparent 100%);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-accent);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+        }
+
+        .logo-icon {
+            font-size: 1.75rem;
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .back-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-purple);
+            transition: width 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--text-accent);
+        }
+
+        .back-link:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 10rem 2rem 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            background: linear-gradient(
+                135deg,
+                #FFFFFF 0%,
+                rgba(255, 255, 255, 0.85) 40%,
+                var(--accent-purple) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(167, 139, 250, 0.2));
+        }
+
+        .page-header .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        section h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-accent);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.3px;
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.15);
+        }
+
+        section h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--accent-purple);
+            margin: 2rem 0 0.75rem;
+        }
+
+        section p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        section ul, section ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        section li {
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        section strong {
+            color: var(--text-accent);
+            font-weight: 500;
+        }
+
+        /* Glassmorphism Highlight Box */
+        .highlight-box {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 2px solid var(--accent-purple);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 16px 16px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 0 16px 16px 0;
+            background: linear-gradient(
+                135deg,
+                rgba(139, 92, 246, 0.08) 0%,
+                transparent 50%
+            );
+            pointer-events: none;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        /* Warning Box - for important legal notices */
+        .warning-box {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 2px solid #F59E0B;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 16px 16px 0;
+            position: relative;
+        }
+
+        .warning-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 0 16px 16px 0;
+            background: linear-gradient(
+                135deg,
+                rgba(245, 158, 11, 0.08) 0%,
+                transparent 50%
+            );
+            pointer-events: none;
+        }
+
+        .warning-box p {
+            margin-bottom: 0;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        /* Glassmorphism Contact Box */
+        .contact-box {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-top: 4rem;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .contact-box::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 50%,
+                rgba(139, 92, 246, 0.1) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            pointer-events: none;
+        }
+
+        .contact-box:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 60px rgba(139, 92, 246, 0.05);
+        }
+
+        .contact-box h2 {
+            margin-bottom: 1.25rem;
+        }
+
+        .contact-box a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            border-color: var(--accent-purple);
+            text-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+        }
+
+        /* Glassmorphism Table of Contents */
+        .toc {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .toc::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.08) 0%,
+                transparent 60%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            pointer-events: none;
+        }
+
+        .toc h2 {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 1.25rem;
+        }
+
+        .toc ol {
+            padding-left: 1.25rem;
+            columns: 2;
+            column-gap: 2rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--accent-purple);
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            background: linear-gradient(180deg, transparent 0%, rgba(5, 5, 8, 0.8) 100%);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-purple);
+            text-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            nav {
+                padding: 1.5rem 1.5rem;
+            }
+
+            main {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .toc ol {
+                columns: 1;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Scroll animation */
+        section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSection 0.6s ease-out forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.15s; }
+        section:nth-child(3) { animation-delay: 0.2s; }
+        section:nth-child(4) { animation-delay: 0.25s; }
+        section:nth-child(5) { animation-delay: 0.3s; }
+        section:nth-child(6) { animation-delay: 0.35s; }
+        section:nth-child(7) { animation-delay: 0.4s; }
+        section:nth-child(8) { animation-delay: 0.45s; }
+        section:nth-child(9) { animation-delay: 0.5s; }
+        section:nth-child(10) { animation-delay: 0.55s; }
+        section:nth-child(11) { animation-delay: 0.6s; }
+        section:nth-child(12) { animation-delay: 0.65s; }
+        section:nth-child(13) { animation-delay: 0.7s; }
+
+        @keyframes fadeInSection {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .toc {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSection 0.6s ease-out forwards;
+            animation-delay: 0.05s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🦉</span>
+            Sova
+        </a>
+        <a href="index.html" class="back-link">← Back</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <header class="page-header">
+            <h1>Terms of Service</h1>
+            <p class="last-updated">Last Updated: December 29, 2025</p>
+        </header>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Contents</h2>
+            <ol>
+                <li><a href="#acceptance">Acceptance of Terms</a></li>
+                <li><a href="#eligibility">Eligibility</a></li>
+                <li><a href="#account">Your Account</a></li>
+                <li><a href="#subscription">Subscription & Payments</a></li>
+                <li><a href="#acceptable-use">Acceptable Use</a></li>
+                <li><a href="#content">Content & Intellectual Property</a></li>
+                <li><a href="#user-content">User-Generated Content</a></li>
+                <li><a href="#health-disclaimer">Health Disclaimer</a></li>
+                <li><a href="#disclaimers">Disclaimers</a></li>
+                <li><a href="#limitation">Limitation of Liability</a></li>
+                <li><a href="#termination">Termination</a></li>
+                <li><a href="#changes">Changes to Terms</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ol>
+        </div>
+
+        <!-- Acceptance of Terms -->
+        <section id="acceptance">
+            <h2>1. Acceptance of Terms</h2>
+            <p>Welcome to Sova. These Terms of Service ("Terms") govern your access to and use of the Sova mobile application ("App"), including any content, functionality, and services offered through the App.</p>
+            <p>By downloading, installing, or using Sova, you agree to be bound by these Terms. If you do not agree to these Terms, do not use the App.</p>
+
+            <div class="highlight-box">
+                <p><strong>Agreement:</strong> By using Sova, you confirm that you have read, understood, and agree to be bound by these Terms and our <a href="privacy.html" style="color: var(--accent-purple);">Privacy Policy</a>.</p>
+            </div>
+        </section>
+
+        <!-- Eligibility -->
+        <section id="eligibility">
+            <h2>2. Eligibility</h2>
+            <p>To use Sova, you must:</p>
+            <ul>
+                <li>Be at least <strong>13 years of age</strong> (or the minimum age required in your jurisdiction)</li>
+                <li>Have the legal capacity to enter into a binding agreement</li>
+                <li>Not be prohibited from using the App under applicable laws</li>
+            </ul>
+            <p>If you are under 18, you represent that your parent or legal guardian has reviewed and agreed to these Terms on your behalf.</p>
+        </section>
+
+        <!-- Your Account -->
+        <section id="account">
+            <h2>3. Your Account</h2>
+
+            <h3>Account Creation</h3>
+            <p>You may use Sova with or without creating an account. Creating an account enables additional features such as syncing across devices and cloud backup of your mixes.</p>
+
+            <h3>Account Security</h3>
+            <p>You are responsible for:</p>
+            <ul>
+                <li>Maintaining the confidentiality of your account credentials</li>
+                <li>All activities that occur under your account</li>
+                <li>Notifying us immediately of any unauthorized access</li>
+            </ul>
+
+            <h3>Account Accuracy</h3>
+            <p>You agree to provide accurate, current, and complete information during registration and to update such information as necessary.</p>
+        </section>
+
+        <!-- Subscription & Payments -->
+        <section id="subscription">
+            <h2>4. Subscription & Payments</h2>
+
+            <h3>Free Features</h3>
+            <p>Sova offers free features including access to a selection of affirmations, basic mix creation, and limited playback options.</p>
+
+            <h3>Premium Subscription</h3>
+            <p>Sova Premium unlocks additional features including:</p>
+            <ul>
+                <li>Full affirmation library access</li>
+                <li>Unlimited mix creation</li>
+                <li>AI-generated personalized affirmations</li>
+                <li>Custom voice recordings</li>
+                <li>Advanced playback modes</li>
+                <li>Apple Health integration</li>
+            </ul>
+
+            <h3>Billing</h3>
+            <ul>
+                <li>Subscriptions are billed through Apple's App Store</li>
+                <li>Payment will be charged to your Apple ID account at confirmation of purchase</li>
+                <li>Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period</li>
+                <li>Your account will be charged for renewal within 24 hours prior to the end of the current period</li>
+            </ul>
+
+            <h3>Cancellation & Refunds</h3>
+            <ul>
+                <li>You may cancel your subscription at any time through your Apple ID account settings</li>
+                <li>Cancellation takes effect at the end of the current billing period</li>
+                <li>Refunds are handled by Apple in accordance with their refund policies</li>
+                <li>No refunds are provided for partial subscription periods</li>
+            </ul>
+
+            <h3>Free Trial</h3>
+            <p>If offered, free trial periods automatically convert to paid subscriptions unless cancelled before the trial ends. Any unused portion of a free trial is forfeited upon purchasing a subscription.</p>
+        </section>
+
+        <!-- Acceptable Use -->
+        <section id="acceptable-use">
+            <h2>5. Acceptable Use</h2>
+            <p>You agree not to:</p>
+            <ul>
+                <li>Use the App for any illegal purpose or in violation of any laws</li>
+                <li>Attempt to gain unauthorized access to any part of the App or its systems</li>
+                <li>Interfere with or disrupt the App's functionality or servers</li>
+                <li>Reverse engineer, decompile, or disassemble the App</li>
+                <li>Remove, alter, or obscure any proprietary notices</li>
+                <li>Use the App to transmit harmful code or malware</li>
+                <li>Create accounts using automated methods or false information</li>
+                <li>Share your account credentials with others</li>
+                <li>Resell, redistribute, or sublicense the App or its content</li>
+            </ul>
+        </section>
+
+        <!-- Content & Intellectual Property -->
+        <section id="content">
+            <h2>6. Content & Intellectual Property</h2>
+
+            <h3>Our Content</h3>
+            <p>All content in Sova, including but not limited to affirmation text, audio recordings, images, graphics, user interface, and software, is owned by Sova or its licensors and is protected by copyright, trademark, and other intellectual property laws.</p>
+
+            <h3>License to Use</h3>
+            <p>Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, revocable license to:</p>
+            <ul>
+                <li>Download and install the App on devices you own or control</li>
+                <li>Access and use the App for personal, non-commercial purposes</li>
+                <li>Listen to and interact with content within the App</li>
+            </ul>
+
+            <h3>Restrictions</h3>
+            <p>You may not:</p>
+            <ul>
+                <li>Copy, modify, or distribute our content outside the App</li>
+                <li>Use our content for commercial purposes without permission</li>
+                <li>Record, download, or extract audio content for external use</li>
+                <li>Use our trademarks, logos, or branding without authorization</li>
+            </ul>
+        </section>
+
+        <!-- User-Generated Content -->
+        <section id="user-content">
+            <h2>7. User-Generated Content</h2>
+
+            <h3>Your Recordings</h3>
+            <p>Sova allows you to record custom affirmations. You retain ownership of any audio content you create. However, by using the App, you grant us a limited license to store, process, and display your recordings as necessary to provide the service.</p>
+
+            <h3>Your Mixes</h3>
+            <p>Mixes you create using our affirmations are for your personal use. You may not distribute, sell, or commercially exploit mixes containing our copyrighted content.</p>
+
+            <h3>Content Guidelines</h3>
+            <p>When creating custom content, you agree not to create recordings that:</p>
+            <ul>
+                <li>Infringe on others' intellectual property rights</li>
+                <li>Contain illegal, harmful, or offensive material</li>
+                <li>Impersonate others or spread misinformation</li>
+            </ul>
+        </section>
+
+        <!-- Health Disclaimer -->
+        <section id="health-disclaimer">
+            <h2>8. Health Disclaimer</h2>
+
+            <div class="warning-box">
+                <p><strong>Important:</strong> Sova is a wellness and personal development app. It is NOT a substitute for professional medical advice, diagnosis, or treatment.</p>
+            </div>
+
+            <h3>Not Medical Advice</h3>
+            <p>The affirmations, meditations, and content in Sova are intended for general wellness and personal development purposes only. They are not intended to:</p>
+            <ul>
+                <li>Diagnose, treat, cure, or prevent any disease or medical condition</li>
+                <li>Replace professional mental health treatment</li>
+                <li>Serve as therapy or counseling</li>
+                <li>Treat clinical depression, anxiety disorders, or other mental health conditions</li>
+            </ul>
+
+            <h3>Seek Professional Help</h3>
+            <p>If you are experiencing mental health challenges, please consult a qualified healthcare professional. If you are in crisis or having thoughts of self-harm, please contact emergency services or a crisis helpline immediately.</p>
+
+            <h3>Apple HealthKit Data</h3>
+            <p>Mindful minutes recorded to Apple Health are for personal tracking purposes only and should not be used for medical decisions.</p>
+        </section>
+
+        <!-- Disclaimers -->
+        <section id="disclaimers">
+            <h2>9. Disclaimers</h2>
+
+            <h3>As-Is Basis</h3>
+            <p>The App is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to:</p>
+            <ul>
+                <li>Implied warranties of merchantability</li>
+                <li>Fitness for a particular purpose</li>
+                <li>Non-infringement</li>
+                <li>Uninterrupted or error-free operation</li>
+            </ul>
+
+            <h3>No Guarantees</h3>
+            <p>We do not guarantee that:</p>
+            <ul>
+                <li>The App will meet your specific requirements or expectations</li>
+                <li>Results from using the App will be accurate or reliable</li>
+                <li>Any errors in the App will be corrected</li>
+                <li>The App will be available at all times</li>
+            </ul>
+
+            <h3>Third-Party Services</h3>
+            <p>The App may integrate with third-party services (Apple HealthKit, Sign in with Apple, etc.). We are not responsible for the availability, accuracy, or practices of these services.</p>
+        </section>
+
+        <!-- Limitation of Liability -->
+        <section id="limitation">
+            <h2>10. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by applicable law:</p>
+
+            <h3>Exclusion of Damages</h3>
+            <p>In no event shall Sova, its affiliates, directors, employees, or agents be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to:</p>
+            <ul>
+                <li>Loss of profits, data, or goodwill</li>
+                <li>Service interruption or device damage</li>
+                <li>Cost of substitute services</li>
+                <li>Any damages arising from your use or inability to use the App</li>
+            </ul>
+
+            <h3>Maximum Liability</h3>
+            <p>Our total liability for any claims arising from these Terms or your use of the App shall not exceed the greater of: (a) the amount you paid us in the 12 months preceding the claim, or (b) $100 USD.</p>
+
+            <h3>Jurisdictional Limitations</h3>
+            <p>Some jurisdictions do not allow the exclusion of certain warranties or limitation of liability, so some of the above limitations may not apply to you.</p>
+        </section>
+
+        <!-- Termination -->
+        <section id="termination">
+            <h2>11. Termination</h2>
+
+            <h3>By You</h3>
+            <p>You may stop using the App at any time. To delete your account, go to Settings within the App or contact us.</p>
+
+            <h3>By Us</h3>
+            <p>We may suspend or terminate your access to the App at any time, with or without cause, including if:</p>
+            <ul>
+                <li>You violate these Terms</li>
+                <li>We discontinue the App or any part of it</li>
+                <li>We are required to do so by law</li>
+            </ul>
+
+            <h3>Effect of Termination</h3>
+            <p>Upon termination:</p>
+            <ul>
+                <li>Your license to use the App immediately ends</li>
+                <li>You must stop using the App and delete it from your devices</li>
+                <li>We may delete your account data (subject to our data retention policies)</li>
+                <li>Provisions that should survive termination will remain in effect</li>
+            </ul>
+        </section>
+
+        <!-- Changes to Terms -->
+        <section id="changes">
+            <h2>12. Changes to Terms</h2>
+            <p>We may update these Terms from time to time. When we make material changes:</p>
+            <ul>
+                <li>We will update the "Last Updated" date at the top of this page</li>
+                <li>We may notify you via email or in-app notification</li>
+                <li>Continued use of the App after changes constitutes acceptance of the new Terms</li>
+            </ul>
+            <p>We encourage you to review these Terms periodically for any changes.</p>
+        </section>
+
+        <!-- Contact Us -->
+        <section id="contact" class="contact-box">
+            <h2>13. Contact Us</h2>
+            <p>If you have any questions about these Terms of Service:</p>
+            <p>
+                <strong>Email:</strong> <a href="mailto:legal@sova.app">legal@sova.app</a><br>
+                <strong>Support:</strong> <a href="mailto:support@sova.app">support@sova.app</a>
+            </p>
+            <p>We aim to respond to all inquiries within 48 hours.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="mailto:support@sova.app">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2025 Sova. All rights reserved.</p>
+    </footer>
+</body>
+</html>
