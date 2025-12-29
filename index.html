@@ -305,8 +305,35 @@
             font-weight: 300;
             color: var(--text-primary);
             max-width: 500px;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             transition: color var(--theme-transition);
+        }
+
+        .coming-soon-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .coming-soon-badge:hover {
+            border-color: var(--accent-purple);
+            color: var(--text-primary);
+        }
+
+        .coming-soon-badge svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
         /* Enhanced App Store Button */
@@ -823,6 +850,24 @@
             transition: color var(--theme-transition);
         }
 
+        .cta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            background: var(--accent-purple);
+            border-radius: 14px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px var(--accent-purple-glow), 0 0 40px var(--accent-purple-glow);
+            filter: brightness(1.1);
+        }
+
         /* ============================================
            FOOTER
            ============================================ */
@@ -931,7 +976,7 @@
         <div class="nav-links">
             <a href="#features">Features</a>
             <a href="support.html">Support</a>
-            <a href="https://apps.apple.com/app/sova">Download</a>
+            <a href="#beta-signup">Join Beta</a>
 
             <!-- Theme Toggle -->
             <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Toggle theme">
@@ -948,17 +993,18 @@
     <section class="hero">
         <h1 class="hero-title">Transform While You Sleep</h1>
         <p class="hero-subtitle">Fall asleep to personalized affirmations and wake up with unshakable confidence. Your subconscious does the work overnight.</p>
-        <a href="https://apps.apple.com/app/sova" class="app-store-btn">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-        </a>
+        <div class="coming-soon-badge">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+            Coming Soon to iOS
+        </div>
     </section>
 
     <!-- Beta Signup -->
-    <section class="beta-signup">
+    <section class="beta-signup" id="beta-signup">
         <div class="beta-signup-card">
-            <span class="beta-signup-badge">Early Access</span>
-            <h2 class="beta-signup-title">Be the first to try new features</h2>
-            <p class="beta-signup-subtitle">Join our beta program and help shape the future of Sova</p>
+            <span class="beta-signup-badge">Launching Soon</span>
+            <h2 class="beta-signup-title">Get early access when we launch</h2>
+            <p class="beta-signup-subtitle">Be first in line and help shape the future of Sova</p>
             <form class="beta-signup-form" id="beta-form">
                 <input
                     type="email"
@@ -1102,10 +1148,8 @@
     <!-- CTA -->
     <section class="cta-section">
         <h2>Wake Up Transformed</h2>
-        <p>Tonight could be the first night of your new mindset. Free to start.</p>
-        <a href="https://apps.apple.com/app/sova" class="app-store-btn">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
-        </a>
+        <p>Join the waitlist and be first to transform your mindset.</p>
+        <a href="#beta-signup" class="cta-btn">Get Early Access</a>
     </section>
 
     <!-- Footer -->
