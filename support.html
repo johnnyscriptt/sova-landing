@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get help with Sova - FAQs, contact support, and troubleshooting guides.">
+    <meta name="theme-color" content="#050508">
+    <title>Support - Sova</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Enhanced color hierarchy matching index.html */
+            --bg: #050508;
+            --bg-elevated: rgba(255, 255, 255, 0.02);
+            --text-primary: rgba(255, 255, 255, 0.85);
+            --text-secondary: rgba(255, 255, 255, 0.5);
+            --text-tertiary: rgba(255, 255, 255, 0.35);
+            --text-accent: #FFFFFF;
+            --accent-purple: #A78BFA;
+            --accent-purple-glow: rgba(139, 92, 246, 0.15);
+            --border: rgba(255, 255, 255, 0.06);
+            --highlight: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Atmospheric Background with Ambient Orbs */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg);
+            background-image:
+                /* Purple ambient orb - top */
+                radial-gradient(
+                    ellipse 60% 40% at 30% 10%,
+                    rgba(139, 92, 246, 0.1) 0%,
+                    transparent 50%
+                ),
+                /* Blue ambient orb - right side */
+                radial-gradient(
+                    ellipse 50% 60% at 90% 50%,
+                    rgba(59, 130, 246, 0.06) 0%,
+                    transparent 50%
+                ),
+                /* Pink accent orb - bottom */
+                radial-gradient(
+                    ellipse 40% 30% at 50% 95%,
+                    rgba(236, 72, 153, 0.05) 0%,
+                    transparent 40%
+                );
+            color: var(--text-primary);
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        /* Subtle Grain/Noise Texture Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.025;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 2rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(5,5,8,0.95) 0%, transparent 100%);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-accent);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+        }
+
+        .logo-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .back-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .back-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--accent-purple);
+            transition: width 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--text-accent);
+        }
+
+        .back-link:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 10rem 2rem 6rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header {
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            background: linear-gradient(
+                135deg,
+                #FFFFFF 0%,
+                rgba(255, 255, 255, 0.85) 40%,
+                var(--accent-purple) 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 30px rgba(167, 139, 250, 0.2));
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contact Box - Primary CTA */
+        .contact-hero {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .contact-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            padding: 1px;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 255, 255, 0.1) 0%,
+                transparent 50%,
+                rgba(139, 92, 246, 0.1) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            pointer-events: none;
+        }
+
+        .contact-hero:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 60px rgba(139, 92, 246, 0.05);
+        }
+
+        .contact-hero .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-hero p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-hero .email-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--accent-purple);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-hero .email-link:hover {
+            background: var(--accent-purple);
+            color: white;
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 3.5rem;
+        }
+
+        section h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--text-accent);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.3px;
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.15);
+        }
+
+        section p {
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 300;
+        }
+
+        section ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        section li {
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        section strong {
+            color: var(--text-accent);
+            font-weight: 500;
+        }
+
+        /* FAQ Accordion */
+        .faq-section {
+            margin-bottom: 4rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .faq-item {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            color: var(--text-accent);
+            font-size: 1rem;
+            font-weight: 500;
+            font-family: inherit;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: var(--accent-purple);
+        }
+
+        .faq-question .icon {
+            font-size: 1.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.open .faq-question .icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 500px;
+        }
+
+        .faq-answer-content {
+            padding: 0 1.5rem 1.25rem;
+            color: var(--text-primary);
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .faq-answer-content a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(167, 139, 250, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer-content a:hover {
+            border-color: var(--accent-purple);
+        }
+
+        /* Help Cards */
+        .help-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .help-card {
+            background: var(--bg-elevated);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.75rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+        }
+
+        .help-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 50%, rgba(139, 92, 246, 0.08) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            -webkit-mask-composite: xor;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .help-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-purple);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2), 0 0 40px rgba(139, 92, 246, 0.08);
+        }
+
+        .help-card:hover::before {
+            opacity: 1;
+        }
+
+        .help-card .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .help-card h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .help-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            margin: 0;
+        }
+
+        /* Response Time Box */
+        .response-box {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .response-box p {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .response-box strong {
+            color: var(--accent-purple);
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            background: linear-gradient(180deg, transparent 0%, rgba(5, 5, 8, 0.8) 100%);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-purple);
+            text-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            nav {
+                padding: 1.5rem 1.5rem;
+            }
+
+            main {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .help-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Scroll animation */
+        section, .contact-hero, .faq-section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInSection 0.6s ease-out forwards;
+        }
+
+        .contact-hero { animation-delay: 0.1s; }
+        .faq-section { animation-delay: 0.2s; }
+        section:nth-of-type(1) { animation-delay: 0.3s; }
+        section:nth-of-type(2) { animation-delay: 0.35s; }
+
+        @keyframes fadeInSection {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="app-icon.png" alt="Sova" class="logo-icon">
+            Sova
+        </a>
+        <a href="index.html" class="back-link">← Back</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <header class="page-header">
+            <h1>Support</h1>
+            <p>We're here to help you get the most out of Sova</p>
+        </header>
+
+        <!-- Contact Hero -->
+        <div class="contact-hero">
+            <div class="icon">💬</div>
+            <h2>Need Help?</h2>
+            <p>Our support team typically responds within 24 hours</p>
+            <a href="mailto:support@sova.app" class="email-link">
+                ✉️ support@sova.app
+            </a>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I create a custom affirmation mix?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Tap the + button in the center of the tab bar, then select "Create Mix". You can browse affirmations by category, search for specific topics, and add them to your mix. Set your preferred interval between affirmations and give your mix a name. Free users can create up to 3 mixes.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How does AI affirmation generation work?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Type your own affirmation text, and our AI will generate professional-quality audio in seconds. This creates truly personalized affirmations tailored to your specific goals and needs. Free users get 3 AI generations per month; Premium users get unlimited generations.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Can I record my own voice?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes! Tap the + button and select "Record Affirmation". Research shows that hearing affirmations in your own voice can be more powerful for subconscious reprogramming. Your recordings are stored locally on your device for privacy.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I use Sova for sleep?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Start playing a mix and set a timer for how long you want it to play. You can choose duration mode (10, 30, or 60 minutes), set a stop time, or loop continuously. The affirmations will play at gentle intervals as you fall asleep, allowing your subconscious to absorb the positive messages.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What's included in Premium?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Premium unlocks unlimited mix creation, unlimited AI affirmation generation, access to all 15+ categories, background music options, and priority support. You can subscribe monthly or yearly, and cancel anytime.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I cancel my subscription?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Subscriptions are managed through your Apple ID. Go to Settings on your iPhone → tap your name → Subscriptions → Sova → Cancel Subscription. You'll continue to have Premium access until the end of your billing period.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Is my data private?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Yes, your privacy is our priority. Audio recordings are stored locally on your device. We never sell your data. HealthKit data (Mindful Minutes) is never used for advertising or shared with third parties. Read our full <a href="privacy.html">Privacy Policy</a> for details.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I delete my account?</span>
+                    <span class="icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Go to Profile → Settings → scroll down and tap "Delete Account". This will permanently remove all your data from our servers. Note: You should cancel any active subscription first to avoid being charged after deletion.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How to Get Help Section -->
+        <section>
+            <h2>How to Get Help</h2>
+            <p>Choose the best way to reach us based on your needs:</p>
+
+            <div class="help-cards">
+                <div class="help-card">
+                    <div class="icon">📧</div>
+                    <h3>Email Support</h3>
+                    <p>Best for detailed questions, account issues, or feature requests</p>
+                </div>
+                <div class="help-card">
+                    <div class="icon">🐛</div>
+                    <h3>Report a Bug</h3>
+                    <p>Include steps to reproduce, device model, and iOS version</p>
+                </div>
+                <div class="help-card">
+                    <div class="icon">💡</div>
+                    <h3>Feature Ideas</h3>
+                    <p>We love hearing how we can make Sova better for you</p>
+                </div>
+            </div>
+
+            <div class="response-box">
+                <p>📬 We aim to respond to all emails within <strong>24-48 hours</strong></p>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section>
+            <h2>Quick Troubleshooting</h2>
+            <p>Try these steps before reaching out:</p>
+            <ul>
+                <li><strong>Audio not playing?</strong> Check your device volume and ensure Silent Mode is off</li>
+                <li><strong>App crashing?</strong> Force quit the app and reopen, or reinstall from the App Store</li>
+                <li><strong>Sync issues?</strong> Ensure you're signed in and have an internet connection</li>
+                <li><strong>Purchase not showing?</strong> Go to Profile → Settings → Restore Purchases</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="mailto:support@sova.app">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2025 Sova. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for FAQ Accordion -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isOpen = faqItem.classList.contains('open');
+
+                // Close all other FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('open');
+                });
+
+                // Toggle current FAQ
+                if (!isOpen) {
+                    faqItem.classList.add('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
