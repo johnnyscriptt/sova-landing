@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Transform your mindset while you sleep. Sova plays personalized affirmations as you drift off, rewiring your subconscious overnight. AI voice generation, 15 categories. Start free.">
+    <meta name="description" content="Be the first to transform your mindset while you sleep. Join the Sova beta and help shape the future of sleep affirmations. AI voice generation, 15 categories. Free for beta testers.">
     <meta name="keywords" content="affirmations, meditation, mindfulness, positive thinking, wellness, mental health, iOS app">
     <meta name="author" content="Sova">
     <meta name="theme-color" content="#050508" id="theme-color-meta">
@@ -11,7 +11,7 @@
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Sova - Transform Your Mind While You Sleep">
-    <meta property="og:description" content="Fall asleep to personalized affirmations and wake up transformed. AI-powered, science-backed sleep affirmations that rewire your subconscious overnight.">
+    <meta property="og:description" content="Join the beta. Fall asleep to personalized affirmations and wake up transformed. Be among the first to experience AI-powered sleep affirmations.">
     <meta property="og:image" content="screenshots/screenshot1_home.png">
 
     <title>Sova - Transform Your Mind While You Sleep</title>
@@ -349,6 +349,51 @@
 
         [data-theme="light"] .app-store-btn img {
             filter: brightness(1);
+        }
+
+        /* Beta CTA Button */
+        .beta-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-purple) 0%, #8B5CF6 100%);
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 20px var(--accent-purple-glow), 0 0 40px var(--accent-purple-glow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .beta-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+            border-radius: inherit;
+        }
+
+        .beta-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px var(--accent-purple-glow), 0 0 60px var(--accent-purple-glow);
+            filter: brightness(1.1);
+        }
+
+        .beta-note {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 1.5rem;
+            font-weight: 300;
+        }
+
+        .beta-perks {
+            font-size: 0.85rem;
+            color: var(--accent-purple);
+            margin-top: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         /* ============================================
@@ -751,7 +796,7 @@
         <div class="nav-links">
             <a href="#features">Features</a>
             <a href="support.html">Support</a>
-            <a href="https://apps.apple.com/app/sova">Download</a>
+            <a href="https://testflight.apple.com/join/YOUR_CODE">Join Beta</a>
 
             <!-- Theme Toggle -->
             <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Toggle theme">
@@ -768,9 +813,10 @@
     <section class="hero">
         <h1 class="hero-title">Transform While You Sleep</h1>
         <p class="hero-subtitle">Fall asleep to personalized affirmations and wake up with unshakable confidence. Your subconscious does the work overnight.</p>
-        <a href="https://apps.apple.com/app/sova" class="app-store-btn">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        <a href="https://testflight.apple.com/join/YOUR_CODE" class="beta-btn">
+            Join the Beta — Free Early Access
         </a>
+        <p class="beta-note">Limited spots available. Help shape the future of Sova.</p>
     </section>
 
     <!-- Phone Section 1: Home Screen - App Introduction -->
@@ -898,11 +944,12 @@
 
     <!-- CTA -->
     <section class="cta-section">
-        <h2>Wake Up Transformed</h2>
-        <p>Tonight could be the first night of your new mindset. Free to start.</p>
-        <a href="https://apps.apple.com/app/sova" class="app-store-btn">
-            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
+        <h2>Be Among the First</h2>
+        <p>Join our beta testers and get free early access. Your feedback shapes the app.</p>
+        <a href="https://testflight.apple.com/join/YOUR_CODE" class="beta-btn">
+            Join the Beta — It's Free
         </a>
+        <p class="beta-perks">Early access • Free premium features • Direct input on new features</p>
     </section>
 
     <!-- Footer -->
